@@ -6,7 +6,24 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-	    System.out.println("Hello world!");
+	    PayRollSystem payRollSystem = new PayRollSystem();
+
+	    FullTimeEmployee emp1 = new FullTimeEmployee("Rohit" , 1001 , 95000);
+	    FullTimeEmployee emp2 = new FullTimeEmployee("Diya" , 1002 ,15000);
+	    PartTimeEmployee emp3 = new PartTimeEmployee("Rakesh" , 0001 , 250 , 17);
+	    PartTimeEmployee emp4 = new PartTimeEmployee("Riya" , 0002 , 500 , 20);
+
+	    payRollSystem.addEmployee(emp1);
+	    payRollSystem.addEmployee(emp2);
+	    payRollSystem.addEmployee(emp3);
+	    payRollSystem.addEmployee(emp4);
+
+	    System.out.println("\n----:Initial Employee details:---- \n");
+	    payRollSystem.displayEmployee();
+
+	    System.out.println("\n----Remove Employee----\n");
+	    payRollSystem.removeEmployee(2);
+	    payRollSystem.displayEmployee();
     }
 }
 
@@ -70,11 +87,11 @@ class PartTimeEmployee extends Employee {
 	}
 }
 
-class payRollSystem {
+class PayRollSystem {
 
 	private ArrayList<Employee> employeeList;
 
-	public payRollSystem() {
+	public PayRollSystem() {
 		employeeList = new ArrayList<>();
 	}
 
